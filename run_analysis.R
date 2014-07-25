@@ -1,17 +1,17 @@
 #Merges the training and the test sets to create one data set.
-a<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/X_train.txt')
-b<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/X_test.txt')
-c<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/Y_train.txt')
-d<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/Y_test.txt')
-s<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/subject_test.txt')
-t<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/subject_train.txt')
+a<-read.table('X_train.txt')
+b<-read.table('X_test.txt')
+c<-read.table('Y_train.txt')
+d<-read.table('Y_test.txt')
+s<-read.table('subject_test.txt')
+t<-read.table('subject_train.txt')
 
 e<-data.frame(a,c,t)
 f<-data.frame(b,d,s)
 g<-rbind(e,f)
 
 #Appropriately labels the data set with descriptive variable names. 
-h<-read.table('C:/Users/kamboj/Desktop/Cleaning Data/Project/features.txt')
+h<-read.table('features.txt')
 h[,2]<-as.character(h[,2])
 h[562,]<-c(562, 'activity')
 h[563,]<-c(563, 'subject')
